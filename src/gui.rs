@@ -31,52 +31,52 @@ impl Plugin for GuiPlugin {
 }
 
 fn spawn_debug_text(mut commands: Commands, asset_server: Res<AssetServer>) {
-    // commands
-    //     .spawn((
-    //         NodeBundle {
-    //             style: Style {
-    //                 width: Val::Percent(100.0),
-    //                 height: Val::Percent(100.0),
-    //                 align_items: AlignItems::Start,
-    //                 justify_content: JustifyContent::Start,
-    //                 flex_direction: FlexDirection::Column,
-    //                 ..default()
-    //             },
-    //             ..default()
-    //         },
-    //         GameEntity,
-    //     ))
-    //     .with_children(|parent| {
-    //         parent
-    //             .spawn(NodeBundle {
-    //                 style: Style {
-    //                     width: Val::Px(345.0),
-    //                     height: Val::Px(125.0),
-    //                     align_items: AlignItems::Center,
-    //                     flex_direction: FlexDirection::Column,
-    //                     justify_content: JustifyContent::Center,
-    //                     padding: UiRect::all(Val::Px(8.0)),
-    //                     margin: UiRect::px(10.0, 10.0, 10.0, 0.0),
-    //                     ..default()
-    //                 },
-    //                 background_color: BackgroundColor::from(Color::BLACK.with_a(0.9)),
-    //                 ..default()
-    //             })
-    //             .with_children(|parent| {
-    //                 parent.spawn((
-    //                     TextBundle::from_section(
-    //                         "Hello Bevy!",
-    //                         TextStyle {
-    //                             font: asset_server.load("monogram.ttf"),
-    //                             font_size: 40.0,
-    //                             color: Color::WHITE,
-    //                             ..default()
-    //                         },
-    //                     ),
-    //                     DebugText,
-    //                 ));
-    //             });
-    //     });
+    commands
+        .spawn((
+            NodeBundle {
+                style: Style {
+                    width: Val::Percent(100.0),
+                    height: Val::Percent(100.0),
+                    align_items: AlignItems::Start,
+                    justify_content: JustifyContent::Start,
+                    flex_direction: FlexDirection::Column,
+                    ..default()
+                },
+                ..default()
+            },
+            GameEntity,
+        ))
+        .with_children(|parent| {
+            parent
+                .spawn(NodeBundle {
+                    style: Style {
+                        width: Val::Px(345.0),
+                        height: Val::Px(125.0),
+                        align_items: AlignItems::Center,
+                        flex_direction: FlexDirection::Column,
+                        justify_content: JustifyContent::Center,
+                        padding: UiRect::all(Val::Px(8.0)),
+                        margin: UiRect::px(10.0, 10.0, 10.0, 0.0),
+                        ..default()
+                    },
+                    background_color: BackgroundColor::from(Color::BLACK.with_a(0.9)),
+                    ..default()
+                })
+                .with_children(|parent| {
+                    parent.spawn((
+                        TextBundle::from_section(
+                            "Hello Bevy!",
+                            TextStyle {
+                                font: asset_server.load("monogram.ttf"),
+                                font_size: 40.0,
+                                color: Color::WHITE,
+                                ..default()
+                            },
+                        ),
+                        DebugText,
+                    ));
+                });
+        });
 }
 
 fn update_debug_text(
