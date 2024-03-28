@@ -1,5 +1,5 @@
 use std::f32::consts::PI;
-use std::time::Instant;
+use bevy::utils::Instant;
 
 use bevy::math::{vec2, vec3};
 use bevy::prelude::*;

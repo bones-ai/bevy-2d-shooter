@@ -1,5 +1,5 @@
 use std::f32::consts::PI;
-use std::time::Duration;
+use bevy::utils::Duration;
 
 use bevy::math::vec3;
 use bevy::{prelude::*, time::common_conditions::on_timer};
