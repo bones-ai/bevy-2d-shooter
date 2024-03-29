@@ -1,4 +1,4 @@
-use std::time::Duration;
+use bevy::utils::Duration;
 
 use bevy::{prelude::*, time::common_conditions::on_timer};
 use kd_tree::{KdPoint, KdTree};
